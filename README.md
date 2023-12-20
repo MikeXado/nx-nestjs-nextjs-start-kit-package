@@ -2,6 +2,8 @@
 
 Welcome to `nx-quickstart`, a comprehensive starter template that integrates Nx, NestJS, Next.js, Prisma, and Typesafe REST using Ts-rest within a monorepo structure. This workspace empowers developers with a smart monorepo setup for efficient development and fast Continuous Integration (CI).
 
+https://github.com/MikeXado/nx-starter-template
+
 # Important
 This `nx-quickstart` is under continuous development. Stay up-to-date with our latest updates and get the most out of it!
 
@@ -66,11 +68,11 @@ Nx comes with local caching already built-in (check your `nx.json`). On CI you m
 
 ## Contributing
 
-We welcome contributions! Please read the [CONTRIBUTING.md](https://github.com/MikeXado/nx-starter-template/CONTRIBUTING.md) file for details on how to contribute to this project.
+We welcome contributions! Please read the [CONTRIBUTING.md](https://github.com/MikeXado/nx-starter-template/blob/main/CONTRIBUTING.md) file for details on how to contribute to this project.
 
 ## License
 
-This project is licensed under the [License Name] - see the [LICENSE](https://github.com/MikeXado/nx-starter-template/LICENSE) file for details.
+This project is licensed under the [License Name] - see the [LICENSE](https://github.com/MikeXado/nx-starter-template/blob/main/LICENSE) file for details.
 
 ## Contact
 Email: [mike.gurin21@gmail.com](mailto:mike.gurin21@gmail.com)
