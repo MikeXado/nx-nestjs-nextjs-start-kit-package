@@ -8,10 +8,9 @@ import ora from "ora";
 import { TailwindManager } from "./tailwind-setup/tailwind-setup.js";
 
 type Options = {
-  proceed: "y" | "n";
   projectName: string;
   destinationDir: string;
-  database: "Prisma" | "TypeORM";
+  database: "Prisma";
   shadcn: string;
   tailwind: string;
 };
@@ -90,32 +89,27 @@ export class SetupTemplate {
    * Performs the setup process.
    * @returns {Promise<void>} A promise that resolves when the setup is complete.
    */
-  async main(): Promise<void> {
-    if (this.options.proceed === "y") {
-      try {
-        const tailwindManager = new TailwindManager(
+  async startSetup(): Promise<void> {
+    try {
+      const tailwindManager = new TailwindManager(
+        this.options.destinationDir,
+        this.options.projectName
+      );
+      await this.cloneRepository();
+      await this.installDependencies();
+      await this.updatePackageJson();
+      if (this.options.shadcn === "y") {
+        const shadcnManager = new ShadcnManager(
           this.options.destinationDir,
           this.options.projectName
         );
-        await this.cloneRepository();
-        await this.installDependencies();
-        await this.updatePackageJson();
-        if (this.options.shadcn === "y") {
-          const shadcnManager = new ShadcnManager(
-            this.options.destinationDir,
-            this.options.projectName
-          );
-          await shadcnManager.main();
-        }
-        if (this.options.shadcn === "n" && this.options.tailwind === "y") {
-          await tailwindManager.setupTailwind();
-        }
-      } catch (error) {
-        logger.error("Error while setting up project:", error);
-        process.exit(0);
+        await shadcnManager.main();
       }
-    } else {
-      logger.info("Setup cancelled");
+      if (this.options.shadcn === "n" && this.options.tailwind === "y") {
+        await tailwindManager.setupTailwind();
+      }
+    } catch (error) {
+      logger.error("Error while setting up project:", error);
     }
   }
 }

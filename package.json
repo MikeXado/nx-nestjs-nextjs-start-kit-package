@@ -1,11 +1,14 @@
 {
-  "name": "nx-nestjs-nextjs-start-kit-package",
+  "name": "nx-quickstart",
   "version": "1.0.0",
   "type": "module",
-  "description": "A start kit package for nx-nestjs-nextjs",
-  "main": "./src/project_manager.ts",
+  "description": "A start kit package for nx-starter-template",
+  "main": "./dist/project-manager.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prepublishOnly": "tsc"
+  },
+  "bin": {
+    "init": "./dist/project-manager.js"
   },
   "repository": {
     "type": "git",

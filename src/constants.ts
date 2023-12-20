@@ -1,6 +1,5 @@
 export const PROJECT_BRANCH_CHOISES = {
   Prisma: "prisma-orm",
-  TypeORM: "typeorm-branch",
 };
 
 export const SHADCN_DEPENDENCIES = [
