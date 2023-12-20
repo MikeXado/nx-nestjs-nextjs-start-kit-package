@@ -3,17 +3,44 @@
   "version": "1.0.0",
   "type": "module",
   "description": "A start kit package for nx-nestjs-nextjs",
-  "main": "./src/setup.mjs",
+  "main": "./src/project_manager.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MikeXado/nx-starter-template.git"
+  },
+  "keywords": [
+    "nestjs",
+    "nextjs",
+    "start",
+    "kit"
+  ],
+  "author": "Gurin Mihail <mike.gurin21@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/username/MikeXado/nx-starter-template/issues"
+  },
+  "homepage": "https://github.com/MikeXado/nx-starter-template#readme",
   "engines": {
     "node": ">=14.8.0"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
+    "chalk": "^5.3.0",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.0.0",
+    "execa": "^8.0.1",
     "inquirer": "^9.2.12",
-    "simple-git": "^3.21.0"
+    "ora": "^7.0.1",
+    "simple-git": "^3.21.0",
+    "tailwind-merge": "^2.1.0",
+    "tailwindcss-animate": "^1.0.7",
+    "typescript": "^5.3.3",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@types/inquirer": "^9.0.7",
+    "@types/node": "^20.10.5"
   }
 }
